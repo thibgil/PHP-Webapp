@@ -1,0 +1,347 @@
+/* Initialisation */
+
+@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
+
+body {
+    margin:0;
+    height: 100%;
+    font-weight: bold;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    letter-spacing: 2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(-45deg, #74b2dc, black, #23a6d5, gray);
+	background-size: 400% 400%;
+	animation: animate-background 15s ease-in-out infinite;
+    transition: 1s all;
+}
+
+.main {
+    padding: 10px;
+    margin-top: 30px;
+    height: 1500px; /* Used in this example to enable scrolling */
+    width: 100%;
+}
+
+@keyframes animate-background {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+/*************************************************************************************************************************************************************************************************************************************************************************/
+/* En-tête */
+
+.header{
+    z-index: 1;
+    position: fixed;
+    overflow: visible;
+    top: 0;
+    width: 100%;
+    box-shadow: 1px 1px 15px black;
+}
+
+.leftSide {
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+}
+
+.logoIM{
+    align-self: center;
+    height: 100px;
+    width: 100px;
+}
+
+.slogan{
+    padding-left: 10px;
+    font-size: 25px;
+    font-weight: bolder;
+    letter-spacing: 4px;
+    color: #74b2dc;
+    display: inline;
+    align-self: center;
+}
+
+nav.menuNav{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+
+nav.menuNav ul{
+    align-self: center;
+    margin-right: 1%;
+    margin-left: auto;
+}
+
+nav.menuNav ul li.button{
+    display: inline-flex;
+    border-radius: 10px;
+    margin-right: 3px;
+    
+}
+
+nav.menuNav ul li.button a{
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav.menuNav ul li.button:hover a{
+    color: white;
+    background: linear-gradient(-45deg, #74b2dc, #23a6d5, rgb(0, 213, 255), rgb(0, 225, 255));
+	background-size: 400% 400%;
+	animation: animate-background 1s ease-in-out infinite;
+    transition: 1s all;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+/* burger menu for responsive navbar */
+
+.burger{
+    display: none;
+    cursor: pointer;
+    align-self: center;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: #74b2dc;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 1043px) {
+    body{
+        overflow-x: hidden;
+    }
+
+    .nav-links{
+        background: white;
+        border-radius: 20px 0px 0px 20px;
+        box-shadow: 1px 1px 15px black;
+        position: absolute;
+        right: -15px;
+        top: 8vh;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li{
+        left: 0;
+        opacity: 0;
+    }
+
+    .burger{
+        display: block;
+        align-self:center;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/*************************************************************************************************************************************************************************************************************************************************************************/
+/* Contenu */
+
+.solutionPresentation{
+    margin-top: 150px;
+    margin-bottom: 300px;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.solutionPresentation p{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: justify;
+}
+
+/* Capteur pollution */
+.pollutionSensor{
+    position: relative;
+    height: 100%;
+    width: 870px;
+    background-color: white;
+    box-shadow: 1px 1px 15px black;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.pollutionOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    border-radius: 10px;
+    transition: .5s ease;
+}
+
+.pollutionSensor:hover .pollutionOverlay {
+    height: 100%;
+}
+
+/* Capteur son */
+.soundSensor{
+    position: relative;
+    height: 100%;
+    width: 870px;
+    background-color: white;
+    box-shadow: 1px 1px 15px black;
+    border-radius: 10px;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.soundOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    border-radius: 10px;
+    transition: .5s ease;
+}
+
+.soundSensor:hover .soundOverlay {
+    height: 100%;
+}
+
+/* Capteur cardiaque */
+.heartBeatSensor{
+    position: relative;
+    height: 100%;
+    width: 870px;
+    background-color: white;
+    box-shadow: 1px 1px 15px black;
+    border-radius: 10px;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.heartOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    border-radius: 10px;
+    transition: .5s ease;
+}
+
+.heartBeatSensor:hover .heartOverlay {
+    height: 100%;
+}
+
+@media only screen and (max-width: 1080px) {
+    .pollutionSensor,
+    .soundSensor,
+    .heartBeatSensor {
+        width: 80%;
+    }
+
+    p{
+        width: 90%;
+    }
+}
+
+/*************************************************************************************************************************************************************************************************************************************************************************/
+/* Pied-de-page */
+
+.footer{
+    background: white;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    align-items: center;
+    width: 100%;
+}
+
+.footer ul li.link{
+    display: inline-block;
+    list-style-type: none;
+}
+
+.footer ul li.link a{
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+}
+
+.footer ul li.link:hover a{
+    background-color: black;
+    color: white;
+    transition: 0.4s all;
+}
+
+.poweredByOversight{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1%;
+    margin-left: auto;
+}
+
+p.poweredBy{
+    color: black;
+    margin-right: 5px;
+}
+
+a.oversight{
+    text-decoration: none;
+    color: #52cde1;
+}
+
+/*************************************************************************************************************************************************************************************************************************************************************************/
+/*************************************************************************************************************************************************************************************************************************************************************************/

@@ -1,0 +1,668 @@
+/* Initialisation */
+
+@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
+
+body {
+    margin:0;
+    font-weight: bold;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    letter-spacing: 2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(-45deg, #74b2dc, black, #23a6d5, gray);
+	background-size: 400% 400%;
+	animation: animate-background 15s ease-in-out infinite;
+    transition: 1s all;
+}
+
+header.header{
+    position: fixed;
+    overflow:visible;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    box-shadow: 1px 1px 15px black;
+}
+
+.main {
+    padding: 10px;
+    margin-top: 30px;
+    height: 1500px; /* Used in this example to enable scrolling */
+    width: 100%;
+}
+
+@keyframes animate-background {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+p.slogan{
+    padding-left: 10px;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 25px;
+    font-weight: bolder;
+    letter-spacing: 4px;
+    color: #74b2dc;
+    display: inline;
+    align-self: center;
+}
+
+nav.menuNav{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+
+nav.menuNav ul{
+    align-self: center;
+    margin-right: 1%;
+    margin-left: auto;
+}
+
+nav.menuNav ul li.button{
+    display: inline-flex;
+    border-radius: 10px;
+    margin-right: 3px;
+    
+}
+
+nav.menuNav ul li.button a{
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav.menuNav ul li.button:hover a{
+    color: white;
+    background: linear-gradient(-45deg, #74b2dc, #23a6d5, rgb(0, 213, 255), rgb(0, 225, 255));
+	background-size: 400% 400%;
+	animation: animate-background 1s ease-in-out infinite;
+    transition: 1s all;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+nav.menuNav img.logoIM{
+    align-self: center;
+    height: 100px;
+    width: 100px;
+}
+
+#pet-select{
+    margin-left: 10px;
+    align-self: center;
+}
+
+#language{
+    border: none;
+}
+
+/* burger menu for responsive navbar */
+
+.burger{
+    display: none;
+    cursor: pointer;
+    align-self: center;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: #74b2dc;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 965px) {
+    body{
+        overflow-x: hidden;
+    }
+
+    .nav-links{
+        background: white;
+        border-radius: 20px 0px 0px 20px;
+        box-shadow: 1px 1px 15px black;
+        position: absolute;
+        right: -15px;
+        top: 8vh;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li{
+        left: 0;
+        opacity: 0;
+    }
+
+    .burger{
+        display: block;
+        display: right;
+        align-self:center;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+
+/* Body */
+
+.dash{
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+}
+
+.global_container {
+    margin-top: 0px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
+.info_user {
+    margin:1%;
+    margin-top: 50px;
+    border-radius: 20px;
+    text-align: left;
+    width: 45%;
+    height: 600px;
+    background-color: white;
+    box-shadow: 1px 1px 15px black;
+}
+
+.profile_title {
+    margin: 0;
+    text-decoration: underline;
+    background-color: #74b2dc;
+    color: white;
+    align-self: center;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.edit_profile_btn {
+    margin-left: 10px;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 16px;
+    height: 60%;
+    width: 100px;
+    background-color: #569ac7;
+    color: white;
+    border-style: outset;
+    border-color: #569ac7;
+    border: 1px solid #569ac7;
+    box-shadow: 1px 1px 15px gray;
+    text-shadow: none;
+    border-radius: 15px;
+}
+
+h1{
+    font-family: 'Saira Extra Condensed', sans-serif;
+    color: #74b2dc;
+    align-self: center;
+    padding: 10px;
+}
+
+.formChat{
+    margin: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+}
+
+.live_chat_title{
+    margin: 0;
+    text-decoration: underline;
+    background-color: #74b2dc;
+    color: white;
+    align-self: center;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.message_container {
+    margin:1%;
+    margin-top: 50px;
+    display: inline-block;
+    width: 45%;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 15px black;
+    height: 600px;
+}
+
+#messages {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: auto;
+    height: 75%;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 10px;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 1px 1px 15px rgb(181, 181, 181);
+
+}
+
+.date {
+    color: #74b2dc;
+}
+
+.user {
+    color: rgb(87, 6, 6);
+}
+
+.description {
+    color: rgb(27, 20, 20);
+}
+
+
+
+#btn-sub{
+    height:auto;
+    margin-left: 10px;
+}
+
+.echo_messages {
+    word-wrap: break-word;
+    background: #74b2dc;
+    border-radius: 10px;
+}
+
+.messages::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.messages::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+.messages::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #74b2dc;
+}
+
+.textarea_div {
+    width: 100%;
+}
+
+input[type=text]{
+    width: 60%;
+    height:auto;
+    border-radius: 10px;
+    border-color:gray;
+    border-width: 2px;
+    background-color: white;
+}
+
+button{
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 16px;
+    height: 60%;
+    width: 100px;
+    background-color: #569ac7;
+    color: white;
+    border-style: outset;
+    border-color: #569ac7;
+    border: 1px solid #569ac7;
+    box-shadow: 1px 1px 15px gray;
+    text-shadow: none;
+    border-radius: 15px;
+}
+
+button:hover {
+    background-color: #c4def0;
+    cursor: pointer;
+    border: 1px solid #c4def0;
+}
+
+.graph_global_container{
+    width: 92%;
+    margin:0;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 150px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 15px black;
+}
+
+.graph_container{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
+
+.graph_section_title {
+    margin: 0;
+    background-color: #74b2dc;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.title{
+    margin: 0;
+    color: white;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.graph_pollution_sensor{
+    margin:1%;
+    margin-top: 50px;
+    border-radius: 20px;
+    text-align: left;
+    width: 33%;
+    height: 200px;
+    background-color: #74b2dc;
+    box-shadow: 1px 1px 15px rgb(181, 181, 181);
+    height: 300px;
+}
+
+.graph_sound_sensor{
+    margin:1%;
+    margin-top: 50px;
+    border-radius: 20px;
+    text-align: left;
+    width: 33%;
+    height: 200px;
+    background-color: #74b2dc;
+    box-shadow: 1px 1px 15px rgb(181, 181, 181);
+    height: 300px;
+}
+
+.graph_heart_sensor{
+    margin:1%;
+    margin-top: 50px;
+    border-radius: 20px;
+    text-align: left;
+    width: 33%;
+    height: 200px;
+    background-color: #74b2dc;
+    box-shadow: 1px 1px 15px rgb(181, 181, 181);
+    height: 300px;
+}
+
+@media only screen and (max-width: 965px) {
+    .global_container {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+    }
+    
+    .info_user {
+        margin:1%;
+        margin-top: 50px;
+        align-self: center;
+        border-radius: 20px;
+        text-align: left;
+        width: 90%;
+        height: 600px;
+        background-color: white;
+        box-shadow: 1px 1px 15px black;
+    }
+    
+    .profile_title {
+        margin: 0;
+        text-decoration: underline;
+        background-color: #74b2dc;
+        color: white;
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    .live_chat_title{
+        margin: 0;
+        text-decoration: underline;
+        background-color: #74b2dc;
+        color: white;
+        border-radius: 20px 20px 0px 0px;
+    }
+    
+    h1{
+        font-family: 'Saira Extra Condensed', sans-serif;
+        color: #74b2dc;
+        align-self: center;
+    }
+    
+    .message_container {
+        margin:1%;
+        align-self: center;
+        display: flex;
+        width: 90%;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 1px 1px 15px black;
+        height: 600px;
+    }
+
+    .graph_global_container{
+        width: 92%;
+        margin:0;
+        margin-left: 4%;
+        margin-right: 4%;
+        margin-top: 150px;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 1px 1px 15px black;
+    }
+    
+    .graph_container{
+        display: flex;
+        flex-direction:column;
+        justify-content: space-around;
+    }
+    
+    .graph_section_title {
+        margin: 0;
+        background-color: #74b2dc;
+        border-radius: 20px 20px 0px 0px;
+    }
+    
+    .title{
+        margin: 0;
+        color: white;
+        text-decoration: underline;
+        text-align: center;
+    }
+    
+    .graph_pollution_sensor{
+        align-self: center;
+        margin:1%;
+        margin-top: 50px;
+        border-radius: 20px;
+        text-align: left;
+        width: 95%;
+        height: 200px;
+        background-color: #74b2dc;
+        box-shadow: 1px 1px 15px rgb(181, 181, 181);
+        height: 300px;
+    }
+    
+    .graph_sound_sensor{
+        align-self: center;
+        margin:1%;
+        margin-top: 50px;
+        border-radius: 20px;
+        text-align: left;
+        width: 95%;
+        height: 200px;
+        background-color: #74b2dc;
+        box-shadow: 1px 1px 15px rgb(181, 181, 181);
+        height: 300px;
+    }
+    
+    .graph_heart_sensor{
+        align-self: center;
+        margin:1%;
+        margin-top: 50px;
+        border-radius: 20px;
+        text-align: left;
+        width: 95%;
+        height: 200px;
+        background-color: #74b2dc;
+        box-shadow: 1px 1px 15px rgb(181, 181, 181);
+        height: 300px;
+    }
+}
+
+/* Modal CSS */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 120px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border: none;
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 15px black;
+  }
+
+  form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+  }
+
+  .DivMod{
+    margin: 10px;
+    width: 60%;
+  }
+
+  .edit_profile_btn{
+      margin-top: 20px;
+      align-self:center;
+  }
+
+  #inputMod{
+      width: 100%;
+      height: 20px;
+  }
+
+  /* The Close Button */
+  .close {
+    color: #74b2dc;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+/* Footer */
+
+footer.footer{
+    background: white;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    align-items: center;
+    padding: 0px;
+    margin-top: 2%;
+    width: 100%;
+}
+
+footer.footer ul li.link{
+    display: inline-block;
+    list-style-type: none;
+}
+
+footer.footer ul li.link a{
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+}
+
+footer.footer ul li.link:hover a{
+    background-color: black;
+    color: white;
+    transition: 0.4s all;
+}
+
+div.poweredByOversight{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1%;
+    margin-left: auto;
+}
+
+p.poweredBy{
+    color: black;
+    margin-right: 5px;
+}
+
+a.oversight{
+    text-decoration: none;
+    color: #52cde1;
+}
+
+
+/* End Footer */
